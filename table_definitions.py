@@ -79,6 +79,29 @@ class Registration(base):
 class ContactCourseDetail(base):
     __tablename__ = 'TEMP_CONTACT_COURSE_DETAIL'
 
+    alignmentDate = Column(DateTime)
+    attendaceResult = Column(Integer)
+    classID = Column(String)
+    completionDate = Column(DateTime)
+    contactID = Column(String)
+    courseID = Column(String)
+    courseResult = Column(Integer)
+    deliveryMethod = Column(Integer)
+    educationContactRole = Column(Integer)
+    name = Column(String)
+    noComponentsPassed = Column(Integer)
+    providerForThisClassID = Column(String)
+    reasonForCourse = Column(Integer)
+    registrationID = Column(String)
+    resultReason = Column(Integer)
+    source = Column(Integer)
+    startDate = Column(DateTime)
+    statusReason = Column(Integer)
+    counter = Column(Integer)
+    components = Column(Integer)
+    applyCredits = Column(Integer)
+    displayName = Column(String)
+
 class RegistrationComponent(base):
     __tablename__ = 'TEMP_REGISTRATION_COMPONENT'
 
