@@ -1,57 +1,47 @@
 from connection import Connection as conn
 from table_definitions import *
 
-results = conn.session.query(NonComplianceNotification)
+table = "NonComplianceNotification"
+results = conn.session.query(eval(table))
 
-# Helper functions. These are not tests.
+# Helper functions.
+# These are not tests.
 
-def checkForNull():
-    return None
+def checkForNull(column):
+    """Determines whether the provided column contains any null values.
+    
+    INPUT: String value, matching a column name for this table.
+    OUTPUT: An object or None.
+    """
+    data = table + "." + column
+    return results.filter(data == None).first()
 
-# Testing for absence of null values in various columns:
+# These tests verify that no null values are present in each column.
 
 def test_complianceID():
-    assert results\
-        .filter(NonComplianceNotification.complianceID == None)\
-        .first() == None
+    assert checkForNull("complianceID") == None
 
 def test_contactID():
-    assert results\
-        .filter(NonComplianceNotification.contactID == None)\
-        .first() == None
+    assert checkForNull("contactID") == None
 
 def test_name():
-    assert results\
-        .filter(NonComplianceNotification.name == None)\
-        .first() == None
+    assert checkForNull("name") == None
 
 def test_nonComplianceRule():
-    assert results\
-        .filter(NonComplianceNotification.nonComplianceRule == None)\
-        .first() == None
+    assert checkForNull("nonComplianceRule") == None
 
 def test_notificationDate():
-    assert results\
-        .filter(NonComplianceNotification.notificationDate == None)\
-        .first() == None
+    assert checkForNull("notificationDate") == None
 
 def test_notificationIssue():
-    assert results\
-        .filter(NonComplianceNotification.notificationIssue == None)\
-        .first() == None
+    assert checkForNull("notificationIssue") == None
 
 def test_stateCode():
-    assert results\
-        .filter(NonComplianceNotification.stateCode == None)\
-        .first() == None
+    assert checkForNull("stateCode") == None
 
 def test_statusReason():
-    assert results\
-        .filter(NonComplianceNotification.statuReason == None)\
-        .first() == None
+    assert checkForNull("statuReason") == None
 
 def test_displayName():
-    assert results\
-        .filter(NonComplianceNotification.displayName == None)\
-        .first() == None
+    assert checkForNull("displayName") == None
 
