@@ -3,6 +3,11 @@ from table_definitions import *
 
 results = conn.session.query(NonComplianceNotification)
 
+# Helper functions. These are not tests.
+
+def checkForNull():
+    return None
+
 # Testing for absence of null values in various columns:
 
 def test_complianceID():
