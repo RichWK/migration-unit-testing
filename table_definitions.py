@@ -105,6 +105,26 @@ class ContactCourseDetail(base):
 class RegistrationComponent(base):
     __tablename__ = 'TEMP_REGISTRATION_COMPONENT'
 
+    attendanceResult = Column(Integer)
+    classComponentID = Column(String)
+    classID = Column(String)
+    componentResult = Column(Integer)
+    contactCourseDetailID = Column(String)
+    contactID = Column(String)
+    counterID = Column(Integer)
+    dateCompleted = Column(DateTime)
+    deliveryMethod = Column(Integer)
+    isPassed = Column(Integer)
+    markPercent = Column(Float)
+    name = Column(String)
+    noSessionsAttended = Column(Integer)
+    notCompleted = Column(Integer)
+    passFailReason = Column(Integer)
+    registrationID = Column(String)
+    sequence = Column(Integer)
+    statusReason = Column(Integer)
+    displayName = Column(String)
+
 class ClassAttendance(base):
     __tablename__ = 'TEMP_CLASS_ATTENDANCE'
 
