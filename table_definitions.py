@@ -125,14 +125,14 @@ class RegistrationComponent(base):
     statusReason = Column(Integer)
     displayName = Column(String)
 
-class ClassAttendance(base):
-    __tablename__ = 'TEMP_CLASS_ATTENDANCE'
+# class ClassAttendance(base):
+#     __tablename__ = 'TEMP_CLASS_ATTENDANCE'
 
-class ClassAttendanceLog(base):
-    __tablename__ = 'TEMP_CLASS_ATTENDANCE_LOG'
+# class ClassAttendanceLog(base):
+#     __tablename__ = 'TEMP_CLASS_ATTENDANCE_LOG'
 
-class EducationHistory(base):
-    __tablename__ = 'TEMP_EDUCATION_HISTORY'
+# class EducationHistory(base):
+#     __tablename__ = 'TEMP_EDUCATION_HISTORY'
 
 class NonComplianceNotification(base):
     __tablename__ = 'TEMP_NON_COMPLIANCE_NOTIFICATION'
