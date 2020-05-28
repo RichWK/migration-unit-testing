@@ -4,8 +4,9 @@ from table_definitions import *
 table = "NonComplianceNotification"
 results = conn.session.query(eval(table))
 
-# Helper functions.
-# These are not tests.
+
+
+# Helper functions — these are not tests.
 
 def checkForNull(column):
     """Determines whether the provided column contains any null values.
@@ -16,7 +17,9 @@ def checkForNull(column):
     data = table + "." + column
     return results.filter(data == None).first()
 
-# These tests verify that no null values are present in each column.
+
+
+# These tests verify there are no null values in each column.
 
 def test_complianceID():
     assert checkForNull("complianceID") == None
