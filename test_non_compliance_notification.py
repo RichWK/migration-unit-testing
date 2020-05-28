@@ -25,11 +25,6 @@ def test_nonComplianceRule():
         .filter(NonComplianceNotification.nonComplianceRule == None)\
         .first() == None
 
-def test_comment():
-    assert results\
-        .filter(NonComplianceNotification.comment == None)\
-        .first() == None
-
 def test_notificationDate():
     assert results\
         .filter(NonComplianceNotification.notificationDate == None)\
