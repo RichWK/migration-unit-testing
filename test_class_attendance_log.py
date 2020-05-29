@@ -10,26 +10,26 @@ table += "."
 # These tests verify there are no null values in each column.
 
 def test_checkInOut():
-    assert check_for_null(results, table + "checkInOut") == None
+    assert is_not_null(results, table + "checkInOut") == None
 
 def test_checkInOutDateTime():
-    assert check_for_null(results, table + "checkInOutDateTime") == None
+    assert is_not_null(results, table + "checkInOutDateTime") == None
 
 def test_classSessionID():
-    assert check_for_null(results, table + "classSessionID") == None
+    assert is_not_null(results, table + "classSessionID") == None
 
 def test_contactID():
-    assert check_for_null(results, table + "contactID") == None
+    assert is_not_null(results, table + "contactID") == None
 
 def test_name():
-    assert check_for_null(results, table + "name") == None
+    assert is_not_null(results, table + "name") == None
 
 def test_classAttendanceID():
-    assert check_for_null(results, table + "classAttendanceID") == None
+    assert is_not_null(results, table + "classAttendanceID") == None
 
 def test_statusCode():
-    assert check_for_null(results, table + "statusCode") == None
+    assert is_not_null(results, table + "statusCode") == None
 
 def test_displayName():
-    assert check_for_null(results, table + "displayName") == None
+    assert is_not_null(results, table + "displayName") == None
 

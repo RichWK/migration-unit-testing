@@ -18,7 +18,7 @@ class Connection():
 
 # These are helper functions used by tests.
 
-def check_for_null(results, column):
+def is_not_null(results, column):
     """Determines whether the provided column contains any null values.
     
     INPUT:
