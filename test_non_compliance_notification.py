@@ -6,6 +6,7 @@ results = conn.session.query(eval(table))
 table += "."
 
 
+
 # These tests verify there are no null values in each column.
 
 def test_complianceID():
