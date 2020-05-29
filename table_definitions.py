@@ -82,7 +82,7 @@ class ContactCourseDetail(base):
     __tablename__ = 'TEMP_CONTACT_COURSE_DETAIL'
 
     alignmentDate = Column(DateTime)
-    attendaceResult = Column(Integer)
+    attendanceResult = Column(Integer)
     classID = Column(String)
     completionDate = Column(DateTime)
     contactID = Column(String)
