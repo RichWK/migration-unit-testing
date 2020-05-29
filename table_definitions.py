@@ -6,6 +6,8 @@ base = declarative_base()
 # Each table we connect to needs to have a class scaffolding it — otherwise SQLAlchemy
 # doesn't know what columns it contains.
 
+# These are ordered according to the sequence they need to be inserted into Dynamics.
+
 class ClassPriceRule(base):
     __tablename__ = 'TEMP_CLASS_PRICE_RULE'
 
