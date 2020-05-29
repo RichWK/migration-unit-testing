@@ -14,3 +14,17 @@ class Connection():
     Session = sessionmaker(bind=conn)
     session = Session()
 
+
+
+# Helper functions — these are not tests.
+
+def check_for_null(results, column):
+    """Determines whether the provided column contains any null values.
+    
+    INPUT:
+    results: The results of a SQLAlchemy query.
+    column: A string specifying the 
+
+    OUTPUT: An object or None.
+    """
+    return results.filter(column == None).first()

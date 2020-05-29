@@ -1,50 +1,37 @@
-from connection import Connection as conn
+from program import Connection as conn, check_for_null
 from table_definitions import *
 
 table = "NonComplianceNotification"
 results = conn.session.query(eval(table))
-
-
-
-# Helper functions — these are not tests.
-
-def checkForNull(column):
-    """Determines whether the provided column contains any null values.
-    
-    INPUT: String value, matching a column name for this table.
-    OUTPUT: An object or None.
-    """
-    data = table + "." + column
-    return results.filter(data == None).first()
-
+table += "."
 
 
 # These tests verify there are no null values in each column.
 
 def test_complianceID():
-    assert checkForNull("complianceID") == None
+    assert check_for_null(results, table + "complianceID") == None
 
 def test_contactID():
-    assert checkForNull("contactID") == None
+    assert check_for_null(results, table + "contactID") == None
 
 def test_name():
-    assert checkForNull("name") == None
+    assert check_for_null(results, table + "name") == None
 
 def test_nonComplianceRule():
-    assert checkForNull("nonComplianceRule") == None
+    assert check_for_null(results, table + "nonComplianceRule") == None
 
 def test_notificationDate():
-    assert checkForNull("notificationDate") == None
+    assert check_for_null(results, table + "notificationDate") == None
 
 def test_notificationIssue():
-    assert checkForNull("notificationIssue") == None
+    assert check_for_null(results, table + "notificationIssue") == None
 
 def test_stateCode():
-    assert checkForNull("stateCode") == None
+    assert check_for_null(results, table + "stateCode") == None
 
 def test_statusReason():
-    assert checkForNull("statuReason") == None
+    assert check_for_null(results, table + "statuReason") == None
 
 def test_displayName():
-    assert checkForNull("displayName") == None
+    assert check_for_null(results, table + "displayName") == None
 
