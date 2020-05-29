@@ -16,7 +16,7 @@ class Connection():
 
 
 
-# Helper functions — these are not tests.
+# These are helper functions used by tests.
 
 def check_for_null(results, column):
     """Determines whether the provided column contains any null values.
@@ -28,3 +28,4 @@ def check_for_null(results, column):
     OUTPUT: An object or None.
     """
     return results.filter(column == None).first()
+
