@@ -23,7 +23,7 @@ def check_for_null(results, column):
     
     INPUT:
     results: The results of a SQLAlchemy query.
-    column: A string specifying the 
+    column: A string specifying a table and a column name, separated with only a period.
 
     OUTPUT: An object or None.
     """

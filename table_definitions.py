@@ -125,8 +125,22 @@ class RegistrationComponent(base):
     statusReason = Column(Integer)
     displayName = Column(String)
 
-# class ClassAttendance(base):
-#     __tablename__ = 'TEMP_CLASS_ATTENDANCE'
+class ClassAttendance(base):
+    __tablename__ = 'TEMP_CLASS_ATTENDANCE'
+
+    reason = 
+    passed = 
+    checkInDate = 
+    checkOutDate = 
+    classID = Column(String)
+    classSessionID = Column(String)
+    contactID = Column(String)
+    statusReason = Column(Integer)
+    name = Column(String, primary_key=True)
+    attendanceNote = 
+    registrationComponent = 
+    registration = 
+    displayName = Column(String)
 
 # class ClassAttendanceLog(base):
 #     __tablename__ = 'TEMP_CLASS_ATTENDANCE_LOG'
