@@ -1,8 +1,8 @@
-from program import Connection as conn, check_for_null
+from program import *
 from table_definitions import *
 
 table = "NonComplianceNotification"
-results = conn.session.query(eval(table))
+results = Connection.session.query(eval(table))
 table += "."
 
 
