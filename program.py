@@ -22,10 +22,11 @@ def is_not_null(results, column):
     """Determines whether the provided column contains any null values.
     
     INPUT:
-    results: The results of a SQLAlchemy query.
-    column: A string specifying a table and a column name, separated with only a period.
-
-    OUTPUT: An object or None.
+    results: This argument should be the results of a SQLAlchemy query.
+    column: A string specifying the table and column name, separated with only a period.
     """
-    return results.filter(column == None).first()
+    if results.filter(column == None).first() == None:
+        return True
+    else:
+        return False
 
