@@ -25,9 +25,6 @@ def test_price():
 def test_statusCode():
     assert is_not_null(results, ClassPriceRule.statusCode) == True
 
-# def test_hasThisLicenseLevel():
-#     assert is_not_null(results, ClassPriceRule.hasThisLicenseLevel) == True
-
 def test_usePriceListItem():
     assert is_not_null(results, ClassPriceRule.usePriceListItem) == True
 

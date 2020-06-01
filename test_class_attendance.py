@@ -13,12 +13,6 @@ def test_reason():
 def test_passed():
     assert is_not_null(results, ClassAttendance.passed) == True
 
-# def test_checkInDate():
-#     assert is_not_null(results, ClassAttendance.checkInDate) == True
-
-# def test_checkOutDate():
-#     assert is_not_null(results, ClassAttendance.checkOutDate) == True
-
 def test_classID():
     assert is_not_null(results, ClassAttendance.classID) == True
 
@@ -33,15 +27,6 @@ def test_statusReason():
 
 def test_name():
     assert is_not_null(results, ClassAttendance.name) == True
-
-# def test_attendanceNote():
-#     assert is_not_null(results, ClassAttendance.attendanceNote) == True
-
-# def test_registrationComponent():
-#     assert is_not_null(results, ClassAttendance.registrationComponent) == True
-
-# def test_registration():
-#     assert is_not_null(results, ClassAttendance.registration) == True
 
 def test_displayName():
     assert is_not_null(results, ClassAttendance.displayName) == True
