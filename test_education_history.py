@@ -2,7 +2,7 @@ from connections import *
 from program import *
 from table_definitions import *
 
-results = Connection.session.query(EducationHistory)
+results = MMSIMIGRATION.session.query(EducationHistory)
 
 
 

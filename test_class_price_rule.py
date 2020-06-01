@@ -2,7 +2,7 @@ from connections import *
 from program import *
 from table_definitions import *
 
-results = Connection.session.query(ClassPriceRule)
+results = MMSIMIGRATION.session.query(ClassPriceRule)
 
 
 

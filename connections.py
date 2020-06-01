@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 # SQLAlchemy needs an 'engine' (i.e. a connection) and a session in order to initialise.
 
-class Connection():
+class MMSIMIGRATION():
     conn = \
     create_engine(
         'mssql+pyodbc://@MMSIMIGRATION/REBGVextra\
