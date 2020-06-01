@@ -11,6 +11,8 @@ def is_not_null(results, column):
     else:
         return False
 
+
+
 def exists_in(column1, column2):
     """Determines whether the first set of results exists in the second set.
     
@@ -19,3 +21,4 @@ def exists_in(column1, column2):
     """
 
     return None
+
