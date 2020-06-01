@@ -7,8 +7,8 @@ results = Connection.session.query(RegistrationComponent)
 
 # These tests verify there are no null values in each column.
 
-def test_attendanceResult():
-    assert is_not_null(results, RegistrationComponent.attendanceResult) == True
+# def test_attendanceResult():
+#     assert is_not_null(results, RegistrationComponent.attendanceResult) == True
 
 def test_classComponentID():
     assert is_not_null(results, RegistrationComponent.classComponentID) == True
@@ -28,8 +28,8 @@ def test_contactID():
 def test_counterID():
     assert is_not_null(results, RegistrationComponent.counterID) == True
 
-def test_dateCompleted():
-    assert is_not_null(results, RegistrationComponent.dateCompleted) == True
+# def test_dateCompleted():
+#     assert is_not_null(results, RegistrationComponent.dateCompleted) == True
 
 def test_deliveryMethod():
     assert is_not_null(results, RegistrationComponent.deliveryMethod) == True
@@ -49,8 +49,8 @@ def test_noSessionsAttended():
 def test_notCompleted():
     assert is_not_null(results, RegistrationComponent.notCompleted) == True
 
-def test_passFailReason():
-    assert is_not_null(results, RegistrationComponent.passFailReason) == True
+# def test_passFailReason():
+#     assert is_not_null(results, RegistrationComponent.passFailReason) == True
 
 def test_registrationID():
     assert is_not_null(results, RegistrationComponent.registrationID) == True
