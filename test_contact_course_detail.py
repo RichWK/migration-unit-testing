@@ -13,11 +13,11 @@ results = Connection.session.query(ContactCourseDetail)
 def test_attendanceResult():
     assert is_not_null(results, ContactCourseDetail.attendanceResult) == True
 
-def test_classID():
-    assert is_not_null(results, ContactCourseDetail.classID) == True
+# def test_classID():
+#     assert is_not_null(results, ContactCourseDetail.classID) == True
 
-def test_completionDate():
-    assert is_not_null(results, ContactCourseDetail.completionDate) == True
+# def test_completionDate():
+#     assert is_not_null(results, ContactCourseDetail.completionDate) == True
 
 def test_contactID():
     assert is_not_null(results, ContactCourseDetail.contactID) == True
