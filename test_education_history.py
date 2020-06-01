@@ -13,11 +13,11 @@ def test_accredUnitType():
 def test_completedCourseUnits():
     assert is_not_null(results, EducationHistory.completedCourseUnits) == True
 
-def test_complianceDetailID():
-    assert is_not_null(results, EducationHistory.complianceDetailID) == True
+# def test_complianceDetailID():
+#     assert is_not_null(results, EducationHistory.complianceDetailID) == True
 
-def test_complianceID():
-    assert is_not_null(results, EducationHistory.complianceID) == True
+# def test_complianceID():
+#     assert is_not_null(results, EducationHistory.complianceID) == True
 
 def test_contactID():
     assert is_not_null(results, EducationHistory.contactID) == True
@@ -28,8 +28,8 @@ def test_courseAccreditationID():
 def test_courseID():
     assert is_not_null(results, EducationHistory.courseID) == True
 
-def test_courseUnits():
-    assert is_not_null(results, EducationHistory.courseUnits) == True
+# def test_courseUnits():
+#     assert is_not_null(results, EducationHistory.courseUnits) == True
 
 def test_eduHistoryID():
     assert is_not_null(results, EducationHistory.eduHistoryID) == True
