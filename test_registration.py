@@ -13,8 +13,8 @@ def test_emailAddress():
 def test_alternatePhoneNumber():
     assert is_not_null(results, Registration.alternatePhoneNumber) == True
 
-def test_cancelOrderID():
-    assert is_not_null(results, Registration.cancelOrderID) == True
+# def test_cancelOrderID():
+#     assert is_not_null(results, Registration.cancelOrderID) == True
 
 def test_cancelOverride():
     assert is_not_null(results, Registration.cancelOverride) == True
@@ -25,8 +25,8 @@ def test_cancelReason():
 def test_classID():
     assert is_not_null(results, Registration.classID) == True
 
-def test_classPrice():
-    assert is_not_null(results, Registration.classPrice) == True
+# def test_classPrice():
+#     assert is_not_null(results, Registration.classPrice) == True
 
 def test_contactID():
     assert is_not_null(results, Registration.contactID) == True
@@ -37,20 +37,20 @@ def test_counter():
 def test_courseID():
     assert is_not_null(results, Registration.courseID) == True
 
-def test_dateAddedToWaitlist():
-    assert is_not_null(results, Registration.dateAddedToWaitlist) == True
+# def test_dateAddedToWaitlist():
+#     assert is_not_null(results, Registration.dateAddedToWaitlist) == True
 
-def test_dateCancelledTransferred():
-    assert is_not_null(results, Registration.dateCancelledTransferred) == True
+# def test_dateCancelledTransferred():
+#     assert is_not_null(results, Registration.dateCancelledTransferred) == True
 
-def test_dateCourseEvalSent():
-    assert is_not_null(results, Registration.dateCourseEvalSent) == True
+# def test_dateCourseEvalSent():
+#     assert is_not_null(results, Registration.dateCourseEvalSent) == True
 
 def test_dateRegistered():
     assert is_not_null(results, Registration.dateRegistered) == True
 
-def test_dateRemovedFromWaitList():
-    assert is_not_null(results, Registration.dateRemovedFromWaitList) == True
+# def test_dateRemovedFromWaitList():
+#     assert is_not_null(results, Registration.dateRemovedFromWaitList) == True
 
 def test_contactCourseDetailID():
     assert is_not_null(results, Registration.contactCourseDetailID) == True
@@ -61,8 +61,8 @@ def test_hold():
 def test_holdUntil():
     assert is_not_null(results, Registration.holdUntil) == True
 
-def test_isNotABoardMember():
-    assert is_not_null(results, Registration.isNotABoardMember) == True
+# def test_isNotABoardMember():
+#     assert is_not_null(results, Registration.isNotABoardMember) == True
 
 def test_name():
     assert is_not_null(results, Registration.name) == True
@@ -79,8 +79,8 @@ def test_organizationID():
 def test_overrideAllowCourseToBeTaken():
     assert is_not_null(results, Registration.overrideAllowCourseToBeTaken) == True
 
-def test_preClassActivityEmailProcessed():
-    assert is_not_null(results, Registration.preClassActivityEmailProcessed) == True
+# def test_preClassActivityEmailProcessed():
+#     assert is_not_null(results, Registration.preClassActivityEmailProcessed) == True
 
 def test_priceRuleID():
     assert is_not_null(results, Registration.priceRuleID) == True
@@ -97,17 +97,17 @@ def test_reasonForTaking():
 def test_registrationSteps():
     assert is_not_null(results, Registration.registrationSteps) == True
 
-def test_transferFromRegID():
-    assert is_not_null(results, Registration.transferFromRegID) == True
+# def test_transferFromRegID():
+#     assert is_not_null(results, Registration.transferFromRegID) == True
 
-def test_transferPending():
-    assert is_not_null(results, Registration.transferPending) == True
+# def test_transferPending():
+#     assert is_not_null(results, Registration.transferPending) == True
 
-def test_waitList():
-    assert is_not_null(results, Registration.waitList) == True
+# def test_waitList():
+#     assert is_not_null(results, Registration.waitList) == True
 
-def test_waitListStatus():
-    assert is_not_null(results, Registration.waitListStatus) == True
+# def test_waitListStatus():
+#     assert is_not_null(results, Registration.waitListStatus) == True
 
 def test_statusReason():
     assert is_not_null(results, Registration.statusReason) == True
