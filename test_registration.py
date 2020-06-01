@@ -5,7 +5,7 @@ results = Connection.session.query(Registration)
 
 
 
-# These tests verify there are no null values in each column.
+# These tests verify there are no null values for these columns.
 
 def test_emailAddress():
     assert is_not_null(results, Registration.emailAddress) == True

@@ -5,7 +5,7 @@ results = Connection.session.query(ClassPriceRule)
 
 
 
-# These tests verify there are no null values in each column.
+# These tests verify there are no null values for these columns.
 
 def test_classID():
     assert is_not_null(results, ClassPriceRule.classID) == True
