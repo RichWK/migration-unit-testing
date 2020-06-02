@@ -2,17 +2,13 @@ from connections import *
 from program import *
 from table_definitions import *
 
-# These variables are sets of results from SQLAlchemy.
-
 session = MMSIMIGRATION.session
 results = session.query(EducationHistory)
 
-# Verifying that no duplicates exist for this entity's records.
+# These are the tests themselves:
 
 def test_duplicates():
     assert duplicates_exist(session, EducationHistory.name) == False
-
-# Verifying there aren't any invalid lookups.
 
 def test_courseAccreditationLookup():
     assert exists_in(
@@ -20,8 +16,6 @@ def test_courseAccreditationLookup():
         ,EducationHistory.courseAccreditationID
         ,CourseAccreditation.name
         ) == True
-
-# These tests verify there are no null values for these columns.
 
 def test_accredUnitType():
     assert is_not_null(results, EducationHistory.accredUnitType) == True
