@@ -6,8 +6,6 @@ base = declarative_base()
 # Each table we connect to needs to have a class which scaffolds it — otherwise
 # SQLAlchemy doesn't know what columns it contains.
 
-# These are ordered according to the sequence they need to be inserted into Dynamics.
-
 class ClassAttendance(base):
     __tablename__ = 'TEMP_CLASS_ATTENDANCE'
 
