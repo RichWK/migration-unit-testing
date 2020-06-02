@@ -1,4 +1,3 @@
-
 def is_not_null(results, column):
     """Determines whether the provided column contains any null values.
     
@@ -11,9 +10,7 @@ def is_not_null(results, column):
     else:
         return False
 
-
-
-# TODO: see https://docs.sqlalchemy.org/en/13/orm/tutorial.html#using-exists
+# todo: see https://docs.sqlalchemy.org/en/13/orm/tutorial.html#using-exists
 
 def exists_in(column1, column2):
     """Determines whether the first set of results exists in the second set.
@@ -21,5 +18,17 @@ def exists_in(column1, column2):
     INPUT:
     column1 & column2: The single-column results of a SQLAlchemy query.
     """
-
     return None
+
+def duplicates_exist(session, column):
+    """Determines if any duplicates exist in the provided column."""
+    data = session.query(column)
+
+    count = data.count()
+    distinct_count = data.distinct().count()
+
+    if distinct_count != count:
+        return True
+    else:
+        return False
+
