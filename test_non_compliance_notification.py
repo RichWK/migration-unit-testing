@@ -2,11 +2,13 @@ from connections import *
 from program import *
 from table_definitions import *
 
-results = MMSIMIGRATION.session.query(NonComplianceNotification)
+session = MMSIMIGRATION.session
+results = session.query(NonComplianceNotification)
 
+def test_duplicates():
+    assert duplicates_exist(session, NonComplianceNotification.name) == False
 
-
-# These tests verify there are no null values for these columns.
+# Everything below checks for nulls:
 
 def test_complianceID():
     assert is_not_null(results, NonComplianceNotification.complianceID) == True

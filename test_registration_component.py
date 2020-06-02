@@ -2,11 +2,13 @@ from connections import *
 from program import *
 from table_definitions import *
 
-results = MMSIMIGRATION.session.query(RegistrationComponent)
+session = MMSIMIGRATION.session
+results = session.query(RegistrationComponent)
 
+def test_duplicates():
+    assert duplicates_exist(session, RegistrationComponent.name) == False
 
-
-# These tests verify there are no null values for these columns.
+# Everything below checks for nulls:
 
 def test_classComponentID():
     assert is_not_null(results, RegistrationComponent.classComponentID) == True

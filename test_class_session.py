@@ -2,11 +2,13 @@ from connections import *
 from program import *
 from table_definitions import *
 
-results = MMSIMIGRATION.session.query(ClassSession)
+session = MMSIMIGRATION.session
+results = session.query(ClassSession)
 
+def test_duplicates():
+    assert duplicates_exist(session, ClassSession.name) == False
 
-
-# These tests verify there are no null values for these columns.
+# Everything below checks for nulls:
 
 def test_courseID():
     assert is_not_null(results, ClassSession.courseID) == True

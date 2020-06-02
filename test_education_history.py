@@ -5,8 +5,6 @@ from table_definitions import *
 session = MMSIMIGRATION.session
 results = session.query(EducationHistory)
 
-# These are the tests themselves:
-
 def test_duplicates():
     assert duplicates_exist(session, EducationHistory.name) == False
 
@@ -16,6 +14,8 @@ def test_courseAccreditationLookup():
         ,EducationHistory.courseAccreditationID
         ,CourseAccreditation.name
         ) == True
+
+# Everything below checks for nulls:
 
 def test_accredUnitType():
     assert is_not_null(results, EducationHistory.accredUnitType) == True
