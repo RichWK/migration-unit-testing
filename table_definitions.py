@@ -90,6 +90,11 @@ class ContactCourseDetail(base):
     applyCredits = Column(Integer)
     displayName = Column(String)
 
+class CourseAccreditation(base):
+    __tablename__ = 'COURSE_ACCREDITATION'  # Located on the staging server.
+
+    name = Column(String)
+
 class EducationHistory(base):
     __tablename__ = 'TEMP_EDUCATION_HISTORY'
 
