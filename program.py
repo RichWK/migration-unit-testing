@@ -5,6 +5,7 @@ def is_not_null(results, column):
     results: This argument should be the results of a SQLAlchemy query.
     column: A string specifying the table and column name, separated with only a period.
     """
+
     if results.filter(column == None).first() == None:
         return True
     else:
@@ -18,12 +19,13 @@ def exists_in(session, column1, column2):
     INPUT:
     column1 & column2: The single-column results of a SQLAlchemy query.
     """
+
     return None
 
 def duplicates_exist(session, column):
     """Determines if any duplicates exist in the provided column."""
+    
     data = session.query(column)
-
     count = data.count()
     distinct_count = data.distinct().count()
 
