@@ -12,7 +12,7 @@ def is_not_null(results, column):
 
 # todo: see https://docs.sqlalchemy.org/en/13/orm/tutorial.html#using-exists
 
-def exists_in(column1, column2):
+def exists_in(session, column1, column2):
     """Determines whether the first set of results exists in the second set.
     
     INPUT:
