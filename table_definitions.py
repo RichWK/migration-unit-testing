@@ -93,7 +93,7 @@ class ContactCourseDetail(base):
 class CourseAccreditation(base):
     __tablename__ = 'COURSE_ACCREDITATION'  # Located on the staging server.
 
-    name = Column(String)
+    name = Column(String, primary_key=True)
 
 class EducationHistory(base):
     __tablename__ = 'TEMP_EDUCATION_HISTORY'
