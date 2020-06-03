@@ -3,7 +3,7 @@ from program import *
 from table_definitions import *
 
 session = MMSIMIGRATION.session
-results = session.query(EducationHistory)
+data = session.query(EducationHistory)
 
 def test_duplicates():
     assert duplicates_exist(session, EducationHistory.name) == False
@@ -18,44 +18,44 @@ def test_courseAccreditationLookup():
 # Everything below checks for nulls:
 
 def test_accredUnitType():
-    assert is_not_null(results, EducationHistory.accredUnitType) == True
+    assert is_not_null(data, EducationHistory.accredUnitType) == True
 
 def test_completedCourseUnits():
-    assert is_not_null(results, EducationHistory.completedCourseUnits) == True
+    assert is_not_null(data, EducationHistory.completedCourseUnits) == True
 
 def test_contactID():
-    assert is_not_null(results, EducationHistory.contactID) == True
+    assert is_not_null(data, EducationHistory.contactID) == True
 
 def test_courseAccreditationID():
-    assert is_not_null(results, EducationHistory.courseAccreditationID) == True
+    assert is_not_null(data, EducationHistory.courseAccreditationID) == True
 
 def test_courseID():
-    assert is_not_null(results, EducationHistory.courseID) == True
+    assert is_not_null(data, EducationHistory.courseID) == True
 
 def test_eduHistoryID():
-    assert is_not_null(results, EducationHistory.eduHistoryID) == True
+    assert is_not_null(data, EducationHistory.eduHistoryID) == True
 
 def test_name():
-    assert is_not_null(results, EducationHistory.name) == True
+    assert is_not_null(data, EducationHistory.name) == True
 
 def test_programAccreditationID():
-    assert is_not_null(results, EducationHistory.programAccreditationID) == True
+    assert is_not_null(data, EducationHistory.programAccreditationID) == True
 
 def test_programIterationID():
-    assert is_not_null(results, EducationHistory.programIterationID) == True
+    assert is_not_null(data, EducationHistory.programIterationID) == True
 
 def test_statusReason():
-    assert is_not_null(results, EducationHistory.statusReason) == True
+    assert is_not_null(data, EducationHistory.statusReason) == True
 
 def test_displayName():
-    assert is_not_null(results, EducationHistory.displayName) == True
+    assert is_not_null(data, EducationHistory.displayName) == True
 
 def test_applied():
-    assert is_not_null(results, EducationHistory.applied) == True
+    assert is_not_null(data, EducationHistory.applied) == True
 
 def test_applyCredits():
-    assert is_not_null(results, EducationHistory.applyCredits) == True
+    assert is_not_null(data, EducationHistory.applyCredits) == True
 
 def test_pending():
-    assert is_not_null(results, EducationHistory.pending) == True
+    assert is_not_null(data, EducationHistory.pending) == True
 

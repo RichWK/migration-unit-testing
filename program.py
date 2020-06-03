@@ -1,12 +1,12 @@
-def is_not_null(results, column):
+def is_not_null(data, column):
     """Determines whether the provided column contains any null values.
     
     INPUT:
-    results: This argument should be the results of a SQLAlchemy query.
+    data: This argument should be the results of a SQLAlchemy query.
     column: A string specifying the table and column name, separated with only a period.
     """
 
-    if results.filter(column == None).first() == None:
+    if data.filter(column == None).first() == None:
         return True
     else:
         return False

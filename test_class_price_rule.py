@@ -3,7 +3,7 @@ from program import *
 from table_definitions import *
 
 session = MMSIMIGRATION.session
-results = session.query(ClassPriceRule)
+data = session.query(ClassPriceRule)
 
 def test_duplicates():
     assert duplicates_exist(session, ClassPriceRule.name) == False
@@ -11,29 +11,29 @@ def test_duplicates():
 # These tests verify there are no null values for these columns.
 
 def test_classID():
-    assert is_not_null(results, ClassPriceRule.classID) == True
+    assert is_not_null(data, ClassPriceRule.classID) == True
 
 def test_courseID():
-    assert is_not_null(results, ClassPriceRule.courseID) == True
+    assert is_not_null(data, ClassPriceRule.courseID) == True
 
 def test_courseClassLevel():
-    assert is_not_null(results, ClassPriceRule.courseClassLevel) == True
+    assert is_not_null(data, ClassPriceRule.courseClassLevel) == True
 
 def test_name():
-    assert is_not_null(results, ClassPriceRule.name) == True
+    assert is_not_null(data, ClassPriceRule.name) == True
 
 def test_price():
-    assert is_not_null(results, ClassPriceRule.price) == True
+    assert is_not_null(data, ClassPriceRule.price) == True
 
 def test_statusCode():
-    assert is_not_null(results, ClassPriceRule.statusCode) == True
+    assert is_not_null(data, ClassPriceRule.statusCode) == True
 
 def test_usePriceListItem():
-    assert is_not_null(results, ClassPriceRule.usePriceListItem) == True
+    assert is_not_null(data, ClassPriceRule.usePriceListItem) == True
 
 def test_priceListID():
-    assert is_not_null(results, ClassPriceRule.priceListID) == True
+    assert is_not_null(data, ClassPriceRule.priceListID) == True
 
 def test_displayName():
-    assert is_not_null(results, ClassPriceRule.displayName) == True
+    assert is_not_null(data, ClassPriceRule.displayName) == True
 

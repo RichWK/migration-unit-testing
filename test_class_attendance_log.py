@@ -3,7 +3,7 @@ from program import *
 from table_definitions import *
 
 session = MMSIMIGRATION.session
-results = session.query(ClassAttendanceLog)
+data = session.query(ClassAttendanceLog)
 
 def test_duplicates():
     assert duplicates_exist(session, ClassAttendanceLog.name) == False
@@ -11,26 +11,26 @@ def test_duplicates():
 # Everything below checks for nulls:
 
 def test_checkInOut():
-    assert is_not_null(results, ClassAttendanceLog.checkInOut) == True
+    assert is_not_null(data, ClassAttendanceLog.checkInOut) == True
 
 def test_checkInOutDateTime():
-    assert is_not_null(results, ClassAttendanceLog.checkInOutDateTime) == True
+    assert is_not_null(data, ClassAttendanceLog.checkInOutDateTime) == True
 
 def test_classSessionID():
-    assert is_not_null(results, ClassAttendanceLog.classSessionID) == True
+    assert is_not_null(data, ClassAttendanceLog.classSessionID) == True
 
 def test_contactID():
-    assert is_not_null(results, ClassAttendanceLog.contactID) == True
+    assert is_not_null(data, ClassAttendanceLog.contactID) == True
 
 def test_name():
-    assert is_not_null(results, ClassAttendanceLog.name) == True
+    assert is_not_null(data, ClassAttendanceLog.name) == True
 
 def test_classAttendanceID():
-    assert is_not_null(results, ClassAttendanceLog.classAttendanceID) == True
+    assert is_not_null(data, ClassAttendanceLog.classAttendanceID) == True
 
 def test_statusCode():
-    assert is_not_null(results, ClassAttendanceLog.statusCode) == True
+    assert is_not_null(data, ClassAttendanceLog.statusCode) == True
 
 def test_displayName():
-    assert is_not_null(results, ClassAttendanceLog.displayName) == True
+    assert is_not_null(data, ClassAttendanceLog.displayName) == True
 
