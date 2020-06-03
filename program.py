@@ -13,8 +13,8 @@ def is_not_null(data, column):
 
 # todo: see https://docs.sqlalchemy.org/en/13/orm/tutorial.html#using-exists
 
-def exists_in_both(session, column1, column2, session2 = None):
-    """Determines whether the values from the first column exist in the second.
+def exists_in_target(session, source_column, target_column, session2 = None):
+    """Determines whether the values from the source column exist in the target.
     
     INPUT:
     column1 & column2: The single-column results of a SQLAlchemy query.

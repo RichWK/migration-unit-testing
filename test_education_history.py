@@ -8,11 +8,11 @@ data = session.query(EducationHistory)
 def test_duplicates():
     assert duplicates_exist(session, EducationHistory.name) == False
 
-def test_courseAccreditationLookup():
-    assert exists_in(
+def test_contactCourseDetail_lookup():
+    assert exists_in_target(
         session
-        ,EducationHistory.courseAccreditationID
-        ,CourseAccreditation.name
+        ,EducationHistory.eduHistoryID
+        ,ContactCourseDetail.name
         ) == True
 
 # Everything below checks for nulls:
