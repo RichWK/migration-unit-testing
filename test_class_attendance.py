@@ -8,6 +8,15 @@ data = session.query(ClassAttendance)
 def test_duplicates():
     assert duplicates_exist(session, ClassAttendance.name) == False
 
+# These tests verify that lookups to other entities actually exist in those entities.
+
+def test_classSession_lookup():
+    assert missing_from_target(
+        ClassAttendance.classSessionID
+        ,ClassSession.name
+        ,session
+    ) == 0
+
 # Everything below checks for nulls:
 
 def test_reason():
