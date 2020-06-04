@@ -33,7 +33,7 @@ def missing_from_target(source_column, target_column, primary_session, session2 
     An integer with a count of the number of missing records.
     """
 
-    # Default session2 to the primary_session (only if session2 hasn't been provided).
+    # Defaults session2 to the primary_session, but only if session2 wasn't provided.
 
     session2 = primary_session if session2 == None else session2
 
