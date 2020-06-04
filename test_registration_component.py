@@ -10,6 +10,13 @@ def test_duplicates():
 
 # These tests verify that lookups to other entities actually exist in those entities.
 
+def test_class_lookup():
+    assert missing_from_target(
+        RegistrationComponent.classID
+        ,Class.mmsiClassCode
+        ,scribe_dev1
+    ) == 0
+
 def test_contactCourseDetail_lookup():
     assert missing_from_target(
         RegistrationComponent.contactCourseDetailID
