@@ -16,6 +16,8 @@ def is_not_null(data, column):
     else:
         return False
 
+
+
 def missing_from_target(source_column, target_column, primary_session, session2 = None):
     """Determines whether the values from the source column exist in the target column.
     
@@ -29,22 +31,23 @@ def missing_from_target(source_column, target_column, primary_session, session2 
     An integer with a count of the number of missing records.
     """
 
-    # Default session2 to the primary_session (but only if it hasn't been provided).
+    # Default session2 to the primary_session (only if session2 hasn't been provided).
+
     session2 = primary_session if session2 == None else session2
 
     source_data = primary_session.query(source_column)
     target_data = session2.query(target_column)
 
-    total_count = source_data.count()
-    exists_count = 0
+    missing_records = 0
 
-    for name in source_data.filter(~exists().where(source_column==target_column)):
-        exists_count += 1
+    # The '~' operator negates the exists() function.
 
-    print(total_count)
-    print(exists_count)
+    for record in source_data.filter(~exists().where(source_column==target_column)):
+        missing_records += 1
 
-    return None
+    return missing_records
+
+
 
 def duplicates_exist(session, column):
     """Determines if any duplicates exist in the provided column."""
