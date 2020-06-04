@@ -1,5 +1,7 @@
 from sqlalchemy.sql import exists
 
+
+
 def is_not_null(data, column):
     """Determines whether the provided column contains any null values.
     
