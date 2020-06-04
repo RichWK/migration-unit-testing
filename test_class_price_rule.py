@@ -2,11 +2,11 @@ from connections import *
 from program import *
 from table_definitions import *
 
-session = MMSIMIGRATION.session
-data = session.query(ClassPriceRule)
+primary_session = MMSIMIGRATION.session
+data = primary_session.query(ClassPriceRule)
 
 def test_duplicates():
-    assert duplicates_exist(session, ClassPriceRule.name) == False
+    assert duplicates_exist(primary_session, ClassPriceRule.name) == False
 
 # These tests verify there are no null values for these columns.
 
