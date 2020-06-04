@@ -6,6 +6,11 @@ base = declarative_base()
 # Each table we connect to needs to have a class which scaffolds it — otherwise
 # SQLAlchemy doesn't know what columns it contains.
 
+class Class(base):
+    __tablename__ = 'CLASS'
+
+    mmsiClassCode = Column(String, primary_key=True)
+
 class ClassAttendance(base):
     __tablename__ = 'CLASS_ATTENDANCE'
 
