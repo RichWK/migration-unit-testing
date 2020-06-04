@@ -16,8 +16,6 @@ def is_not_null(data, column):
     else:
         return False
 
-# todo: see https://docs.sqlalchemy.org/en/13/orm/tutorial.html#using-exists
-
 def missing_from_target(source_column, target_column, primary_session, session2 = None):
     """Determines whether the values from the source column exist in the target column.
     
