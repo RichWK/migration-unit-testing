@@ -31,15 +31,15 @@ def missing_from_target(source_column, target_column, session):
     session2: This is used as the connection for 'target_column' if provided.
 
     OUTPUT:
-    An integer with a count of the number of missing records.
+    An integer with a count of the number of distinct missing records.
     """
 
     missing_records = 0
-    source_data = session.query(source_column).filter(source_column.isnot(None))
+    data = session.query(source_column).distinct().filter(source_column.isnot(None))
 
     # The '~' operator negates the exists() call.
 
-    for record in source_data.filter(~exists().where(source_column==target_column)):
+    for record in data.filter(~exists().where(source_column==target_column)):
         missing_records += 1
 
     return missing_records
