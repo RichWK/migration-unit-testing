@@ -2,11 +2,11 @@ from connections import *
 from program import *
 from table_definitions import *
 
-primary_session = MMSIMIGRATION.session
-data = primary_session.query(ClassAttendance)
+mmsimigration = MMSIMIGRATION.session
+data = mmsimigration.query(ClassAttendance)
 
 def test_duplicates():
-    assert duplicates_exist(primary_session, ClassAttendance.name) == False
+    assert duplicates_exist(mmsimigration, ClassAttendance.name) == False
 
 # These tests verify that lookups to other entities actually exist in those entities.
 
@@ -14,7 +14,7 @@ def test_classSession_lookup():
     assert missing_from_target(
         ClassAttendance.classSessionID
         ,ClassSession.name
-        ,primary_session
+        ,mmsimigration
     ) == 0
 
 # Everything below checks for nulls:

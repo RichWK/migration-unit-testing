@@ -2,11 +2,11 @@ from connections import *
 from program import *
 from table_definitions import *
 
-primary_session = MMSIMIGRATION.session
-data = primary_session.query(ClassSession)
+mmsimigration = MMSIMIGRATION.session
+data = mmsimigration.query(ClassSession)
 
 def test_duplicates():
-    assert duplicates_exist(primary_session, ClassSession.name) == False
+    assert duplicates_exist(mmsimigration, ClassSession.name) == False
 
 # Everything below checks for nulls:
 

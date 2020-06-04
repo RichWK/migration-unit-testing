@@ -2,11 +2,11 @@ from connections import *
 from program import *
 from table_definitions import *
 
-primary_session = MMSIMIGRATION.session
-data = primary_session.query(Registration)
+mmsimigration = MMSIMIGRATION.session
+data = mmsimigration.query(Registration)
 
 def test_duplicates():
-    assert duplicates_exist(primary_session, Registration.name) == False
+    assert duplicates_exist(mmsimigration, Registration.name) == False
 
 # These tests verify that lookups to other entities actually exist in those entities.
 
@@ -14,14 +14,14 @@ def test_contactCourseDetail_lookup():
     assert missing_from_target(
         Registration.contactCourseDetailID
         ,ContactCourseDetail.name
-        ,primary_session
+        ,mmsimigration
     ) == 0
 
 def test_classPriceRule_lookup():
     assert missing_from_target(
         Registration.priceRuleID
         ,ClassPriceRule.name
-        ,primary_session
+        ,mmsimigration
     ) == 0
 
 # Everything below checks for nulls:
