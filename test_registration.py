@@ -17,6 +17,13 @@ def test_contactCourseDetail_lookup():
         ,session
     ) == 0
 
+def test_classPriceRule_lookup():
+    assert missing_from_target(
+        Registration.priceRuleID
+        ,ClassPriceRule.name
+        ,session
+    ) == 0
+
 # Everything below checks for nulls:
 
 def test_emailAddress():
