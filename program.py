@@ -20,7 +20,7 @@ def is_not_null(data, column):
 
 
 
-def missing_from_target(source_column, target_column, primary_session, session2 = None):
+def missing_from_target(source_column, target_column, session):
     """Determines whether the values from the source column exist in the target column.
     
     INPUT:
@@ -33,11 +33,7 @@ def missing_from_target(source_column, target_column, primary_session, session2 
     An integer with a count of the number of missing records.
     """
 
-    # Defaults session2 to the primary_session, but only if session2 wasn't provided.
-
-    session2 = primary_session if session2 == None else session2
-
-    source_data = primary_session.query(source_column)
+    source_data = session.query(source_column)
     missing_records = 0
 
     # The '~' operator negates the exists() call.
