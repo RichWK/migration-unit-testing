@@ -2,13 +2,12 @@ from connections import *
 from program import *
 from table_definitions import *
 
-mmsimigration = MMSIMIGRATION.session
 scribe_dev1 = SCRIBE_DEV1.session
 
-data = mmsimigration.query(EducationHistory)
+data = scribe_dev1.query(EducationHistory)
 
 def test_duplicates():
-    assert duplicates_exist(mmsimigration, EducationHistory.name) == False
+    assert duplicates_exist(scribe_dev1, EducationHistory.name) == False
 
 # These tests verify that lookups to other entities actually exist in those entities.
 
@@ -16,14 +15,13 @@ def test_contactCourseDetail_lookup():
     assert missing_from_target(
         EducationHistory.eduHistoryID
         ,ContactCourseDetail.name
-        ,mmsimigration
+        ,scribe_dev1
     ) == 0
 
 def test_courseAccreditation_lookup():
     assert missing_from_target(
         EducationHistory.courseAccreditationID
         ,CourseAccreditation.name
-        ,mmsimigration
         ,scribe_dev1
     ) == 0
 
