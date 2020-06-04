@@ -1,3 +1,5 @@
+from sqlalchemy.sql import exists
+
 def is_not_null(data, column):
     """Determines whether the provided column contains any null values.
     
@@ -13,18 +15,32 @@ def is_not_null(data, column):
 
 # todo: see https://docs.sqlalchemy.org/en/13/orm/tutorial.html#using-exists
 
-def exists_in_target(primary_session, source_column, target_column, session2 = None):
+def missing_from_target(source_column, target_column, primary_session, session2 = None):
     """Determines whether the values from the source column exist in the target.
     
     INPUT:
     column1 & column2: The single-column results of a SQLAlchemy query.
     """
 
-    # Default session2 to the primary_session if session2 is null.
+    # Default session2 to the primary_session if it hasn't been provided.
     session2 = primary_session if session2 == None else session2
 
     source_data = primary_session.query(source_column)
     target_data = session2.query(target_column)
+
+    # source_data.filter(exists().where(source_column==target_column))
+
+    total_count = source_data.count()
+    exists_count = 0
+
+    # for name in source_data.filter(source_column.notin_(target_column)):
+    #     exists_count += 1
+
+    for name in source_data.filter(~exists().where(source_column==target_column)):
+        exists_count += 1
+
+    print(total_count)
+    print(exists_count)
 
     return None
 

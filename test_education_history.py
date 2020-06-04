@@ -9,10 +9,10 @@ def test_duplicates():
     assert duplicates_exist(session, EducationHistory.name) == False
 
 def test_contactCourseDetail_lookup():
-    assert exists_in_target(
-        session
-        ,EducationHistory.eduHistoryID
+    assert missing_from_target(
+        EducationHistory.eduHistoryID
         ,ContactCourseDetail.name
+        ,session
         ) == True
 
 # Everything below checks for nulls:
