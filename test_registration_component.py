@@ -8,6 +8,15 @@ data = session.query(RegistrationComponent)
 def test_duplicates():
     assert duplicates_exist(session, RegistrationComponent.name) == False
 
+# These tests verify that lookups to other entities actually exist in those entities.
+
+def test_registration_lookup():
+    assert missing_from_target(
+        RegistrationComponent.registrationID
+        ,Registration.name
+        ,session
+    ) == 0
+
 # Everything below checks for nulls:
 
 def test_classComponentID():
