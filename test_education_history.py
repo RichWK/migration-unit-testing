@@ -11,12 +11,29 @@ def test_duplicates():
 
 # These tests verify that lookups to other entities actually exist in those entities.
 
+def test_compliance_lookup():
+    assert missing_from_target(
+        EducationHistory.complianceID
+        ,Compliance.name
+        ,scribe_dev1
+    ) == 0
+
+def test_complianceDetail_lookup():
+    assert missing_from_target(
+        EducationHistory.complianceDetailID
+        ,ComplianceDetail.name
+        ,scribe_dev1
+    ) == 0
+
 def test_contactCourseDetail_lookup():
     assert missing_from_target(
         EducationHistory.eduHistoryID
         ,ContactCourseDetail.name
         ,scribe_dev1
     ) == 0
+
+def test_course_lookup():
+    assert missing_from_target(EducationHistory.courseID,Course.name,scribe_dev1) == 0
 
 def test_courseAccreditation_lookup():
     assert missing_from_target(
