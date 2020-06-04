@@ -13,7 +13,7 @@ def is_not_null(data, column):
     Boolean value.
     """
 
-    if data.filter(column == None).first() == None:
+    if data.filter(column is None).first() is None:
         return True
     else:
         return False
@@ -22,6 +22,7 @@ def is_not_null(data, column):
 
 def missing_from_target(source_column, target_column, session):
     """Determines whether the values from the source column exist in the target column.
+    Nulls values in the source column are ignored.
     
     INPUT:
     source_column: The values to be verified, in the format of tablename.columnname
@@ -33,8 +34,8 @@ def missing_from_target(source_column, target_column, session):
     An integer with a count of the number of missing records.
     """
 
-    source_data = session.query(source_column)
     missing_records = 0
+    source_data = session.query(source_column).filter(source_column.isnot(None))
 
     # The '~' operator negates the exists() call.
 
