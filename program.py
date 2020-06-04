@@ -36,8 +36,6 @@ def missing_from_target(source_column, target_column, primary_session, session2 
     session2 = primary_session if session2 == None else session2
 
     source_data = primary_session.query(source_column)
-    target_data = session2.query(target_column)
-
     missing_records = 0
 
     # The '~' operator negates the exists() call.
