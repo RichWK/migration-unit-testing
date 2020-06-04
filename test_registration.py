@@ -8,6 +8,15 @@ data = session.query(Registration)
 def test_duplicates():
     assert duplicates_exist(session, Registration.name) == False
 
+# These tests verify that lookups to other entities actually exist in those entities.
+
+def test_contactCourseDetail_lookup():
+    assert missing_from_target(
+        Registration.contactCourseDetailID
+        ,ContactCourseDetail.name
+        ,session
+    ) == 0
+
 # Everything below checks for nulls:
 
 def test_emailAddress():
