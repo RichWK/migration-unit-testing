@@ -1,3 +1,4 @@
+from os import getcwd
 from sqlalchemy.sql import exists
 
 
@@ -42,6 +43,9 @@ def missing_from_target(source_column, target_column, session):
     for record in data.filter(~exists().where(source_column==target_column)):
         missing_records += 1
 
+    # if missing_records > 0:
+    #     write_to_file(data)
+
     return missing_records
 
 
@@ -57,4 +61,16 @@ def duplicates_exist(session, column):
         return True
     else:
         return False
+
+
+
+# def write_to_file(data):
+
+#     file_data = str()
+        
+#     for record in data:
+#         file_data += record + '\n'
+
+#     with open('test.txt', 'w') as file:
+#         file.write(file_data)
 
