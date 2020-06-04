@@ -13,7 +13,7 @@ def test_contactCourseDetail_lookup():
         EducationHistory.eduHistoryID
         ,ContactCourseDetail.name
         ,session
-        ) == 0
+    ) == 0
 
 # Everything below checks for nulls:
 
