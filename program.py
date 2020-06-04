@@ -40,7 +40,7 @@ def missing_from_target(source_column, target_column, primary_session, session2 
 
     missing_records = 0
 
-    # The '~' operator negates the exists() function.
+    # The '~' operator negates the exists() call.
 
     for record in source_data.filter(~exists().where(source_column==target_column)):
         missing_records += 1
