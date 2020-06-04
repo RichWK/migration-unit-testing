@@ -8,6 +8,15 @@ data = scribe_dev1.query(NonComplianceNotification)
 def test_duplicates():
     assert duplicates_exist(scribe_dev1, NonComplianceNotification.name) == False
 
+# These tests verify that lookups to other entities actually exist in those entities.
+
+def test_compliance_lookup():
+    assert missing_from_target(
+        NonComplianceNotification.complianceID
+        ,Compliance.name
+        ,scribe_dev1
+    ) == 0
+
 # Everything below checks for nulls:
 
 def test_complianceID():
