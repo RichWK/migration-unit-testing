@@ -7,7 +7,7 @@ base = declarative_base()
 # SQLAlchemy doesn't know what columns it contains.
 
 class ClassAttendance(base):
-    __tablename__ = 'TEMP_CLASS_ATTENDANCE'
+    __tablename__ = 'CLASS_ATTENDANCE'
 
     reason = Column(Integer)
     passed = Column(Integer)
@@ -24,7 +24,7 @@ class ClassAttendance(base):
     displayName = Column(String)
 
 class ClassAttendanceLog(base):
-    __tablename__ = 'TEMP_CLASS_ATTENDANCE_LOG'
+    __tablename__ = 'CLASS_ATTENDANCE_LOG'
 
     checkInOut = Column(Integer)
     checkInOutDateTime = Column(DateTime)
@@ -36,7 +36,7 @@ class ClassAttendanceLog(base):
     displayName = Column(String)
 
 class ClassPriceRule(base):
-    __tablename__ = 'TEMP_CLASS_PRICE_RULE'
+    __tablename__ = 'CLASS_PRICE_RULE'
 
     classID = Column(String)
     courseID = Column(String)
@@ -50,7 +50,7 @@ class ClassPriceRule(base):
     displayName = Column(String)
 
 class ClassSession(base):
-    __tablename__ = 'TEMP_CLASS_SESSION'
+    __tablename__ = 'CLASS_SESSION'
 
     attendanceGeneratedOn = Column(DateTime)
     classID = Column(String)
@@ -64,8 +64,18 @@ class ClassSession(base):
     classComponentID = Column(String)
     displayName = Column(String)
 
+class Compliance(base):
+    __tablename__ = 'COMPLIANCE'
+
+    name = Column(String, primary_key=True)
+
+class ComplianceDetail(base):
+    __tablename__ = 'COMPLIANCE_DETAIL'
+
+    name = Column(String, primary_key=True)
+
 class ContactCourseDetail(base):
-    __tablename__ = 'TEMP_CONTACT_COURSE_DETAIL'
+    __tablename__ = 'CONTACT_COURSE_DETAIL'
 
     alignmentDate = Column(DateTime)
     attendanceResult = Column(Integer)
@@ -85,18 +95,20 @@ class ContactCourseDetail(base):
     source = Column(Integer)
     startDate = Column(DateTime)
     statusReason = Column(Integer)
-    counter = Column(Integer)
-    components = Column(Integer)
-    applyCredits = Column(Integer)
     displayName = Column(String)
 
+class Course(base):
+    __tablename__ = 'COURSE'
+
+    name = Column(String, primary_key=True)
+
 class CourseAccreditation(base):
-    __tablename__ = 'COURSE_ACCREDITATION'  # Located on the staging server.
+    __tablename__ = 'COURSE_ACCREDITATION'
 
     name = Column(String, primary_key=True)
 
 class EducationHistory(base):
-    __tablename__ = 'TEMP_EDUCATION_HISTORY'
+    __tablename__ = 'EDUCATION_HISTORY'
 
     accredUnitType = Column(Integer)
     completedCourseUnits = Column(Integer)
@@ -117,7 +129,7 @@ class EducationHistory(base):
     pending = Column(Integer)
 
 class NonComplianceNotification(base):
-    __tablename__ = 'TEMP_NON_COMPLIANCE_NOTIFICATION'
+    __tablename__ = 'NON_COMPLIANCE_NOTIFICATION'
 
     comment = Column(String)
     complianceID = Column(String)
@@ -131,7 +143,7 @@ class NonComplianceNotification(base):
     displayName = Column(Integer)
 
 class Registration(base):
-    __tablename__ = 'TEMP_REGISTRATION'
+    __tablename__ = 'REGISTRATION'
 
     emailAddress = Column(String)
     alternatePhoneNumber = Column(String)
@@ -172,7 +184,7 @@ class Registration(base):
     displayName = Column(String)
 
 class RegistrationComponent(base):
-    __tablename__ = 'TEMP_REGISTRATION_COMPONENT'
+    __tablename__ = 'REGISTRATION_COMPONENT'
 
     attendanceResult = Column(Integer)
     classComponentID = Column(String)
