@@ -197,6 +197,12 @@ class Order(base):
 
     orderNo = Column(String, primary_key=True)
 
+class OrderProduct(base):
+    __tablename__ = 'ORDER_PRODUCT'
+
+    classID = Column(String, primary_key=True)
+    orderID = Column(String, primary_key=True)
+
 class Registration(base):
     __tablename__ = 'REGISTRATION'
 
