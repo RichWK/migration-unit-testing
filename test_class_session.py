@@ -8,6 +8,22 @@ data = scribe_dev1.query(ClassSession)
 def test_duplicates():
     assert duplicates_exist(scribe_dev1, ClassSession.name) == False
 
+# These tests verify that lookups to other entities actually exist in those entities.
+
+def test_class_lookup():
+    assert missing_from_target(
+        ClassSession.classID
+        ,Class.mmsiClassCode
+        ,scribe_dev1
+    ) == 0
+
+def test_course_lookup():
+    assert missing_from_target(
+        ClassSession.courseID
+        ,Course.name
+        ,scribe_dev1
+    ) == 0
+
 # Everything below checks for nulls:
 
 def test_courseID():
