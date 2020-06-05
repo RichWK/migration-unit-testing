@@ -15,6 +15,7 @@ def test_class_lookup():
         ClassAttendance.classID
         ,Class.mmsiClassCode
         ,scribe_dev1
+        ,EventsClass.mmsiClassCode
     ) == 0
 
 def test_classSession_lookup():
