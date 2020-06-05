@@ -169,6 +169,13 @@ class EducationHistory(base):
     applyCredits = Column(Integer)
     pending = Column(Integer)
 
+class EventsClass(base):
+    __tablename__ = 'EVENTS_CLASS'
+
+    courseID = Column(String)
+    mmsiClassCode = Column(String, primary_key=True)
+    venueID = Column(String)
+
 class NonComplianceNotification(base):
     __tablename__ = 'NON_COMPLIANCE_NOTIFICATION'
 
