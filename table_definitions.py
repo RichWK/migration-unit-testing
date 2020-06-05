@@ -42,6 +42,13 @@ class ClassAttendanceLog(base):
     statusCode = Column(Integer)
     displayName = Column(String)
 
+class ClassContact(base):
+    __tablename__ = 'CLASS_CONTACT'
+
+    classID = Column(String)
+    courseID = Column(String)
+    name = Column(String, primary_key=True)
+
 class ClassPriceRule(base):
     __tablename__ = 'CLASS_PRICE_RULE'
 
