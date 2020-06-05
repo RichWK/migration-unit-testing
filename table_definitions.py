@@ -87,6 +87,7 @@ class Compliance(base):
 class ComplianceDetail(base):
     __tablename__ = 'COMPLIANCE_DETAIL'
 
+    complianceID = Column(String)
     name = Column(String, primary_key=True)
 
 class ContactCourseDetail(base):
@@ -120,6 +121,7 @@ class Course(base):
 class CourseAccreditation(base):
     __tablename__ = 'COURSE_ACCREDITATION'
 
+    courseID = Column(String)
     name = Column(String, primary_key=True)
 
 class CourseComponent(base):
