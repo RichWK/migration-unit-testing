@@ -147,6 +147,11 @@ class NonComplianceNotification(base):
     statuReason = Column(Integer)
     displayName = Column(Integer)
 
+class Order(base):
+    __tablename__ = 'ORDER'
+
+    orderNo = Column(String, primary_key=True)
+
 class Registration(base):
     __tablename__ = 'REGISTRATION'
 
