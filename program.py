@@ -1,5 +1,5 @@
 from os import getcwd
-from sqlalchemy.sql import and_, exists
+from sqlalchemy.sql import or_, exists
 
 
 
@@ -43,7 +43,7 @@ def missing_from_target(source_column, target_column, session, target_column2 = 
     if target_column2 is None:
         logic = source_column==target_column
     else:
-        logic = and_(source_column==target_column,source_column==target_column2)
+        logic = or_(source_column==target_column,source_column==target_column2)
 
     missing_records = 0
     
