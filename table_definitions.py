@@ -3,8 +3,8 @@ from sqlalchemy import Column, Integer, String, DateTime, Float
 
 base = declarative_base()
 
-# Each table we connect to needs to have a class which scaffolds it — otherwise
-# SQLAlchemy doesn't know what columns it contains.
+# Each table being connected to needs a class which scaffolds it — otherwise SQLAlchemy
+# can't tell what columns it contains.
 
 class Class(base):
     __tablename__ = 'CLASS'
@@ -47,6 +47,7 @@ class ClassContact(base):
 
     classID = Column(String)
     courseID = Column(String)
+    courseContactID = Column(String)
     name = Column(String, primary_key=True)
 
 class ClassPriceRule(base):
@@ -121,9 +122,29 @@ class CourseAccreditation(base):
 
     name = Column(String, primary_key=True)
 
+class CourseComponent(base):
+    __tablename__ = 'COURSE_COMPONENT'
+
+    classID = Column(String)
+    courseID = Column(String)
+    displayName = Column(String, primary_key=True)
+
 class CourseContact(base):
     __tablename__ = 'COURSE_CONTACT'
 
+    courseID = Column(String)
+    name = Column(String, primary_key=True)
+
+class CourseEducationProvider(base):
+    __tablename__ = 'COURSE_EDUCATION_PROVIDER'
+
+    courseID = Column(String)
+    name = Column(String, primary_key=True)
+
+class CourseRestriction(base):
+    __tablename__ = 'COURSE_RESTRICTION'
+
+    classID = Column(String)
     courseID = Column(String)
     name = Column(String, primary_key=True)
 
