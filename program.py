@@ -38,7 +38,7 @@ def missing_from_target(source_column, target_column, session, target_column2 = 
 
     data = session.query(source_column).distinct().filter(source_column.isnot(None))
 
-    # If a second target column is provided, the values need to be in either of them.
+    # If a second target column is provided, the values can exist in either of them.
 
     if target_column2 is None:
         logic = source_column==target_column
