@@ -1,5 +1,5 @@
 from os import getcwd
-from sqlalchemy.sql import exists
+from sqlalchemy.sql import and_, exists
 
 
 
@@ -21,26 +21,35 @@ def is_not_null(data, column):
 
 
 
-def missing_from_target(source_column, target_column, session):
+def missing_from_target(source_column, target_column, session, target_column2 = None):
     """Determines whether the values from the source column exist in the target column.
     Nulls values in the source column are ignored.
     
     INPUT:
     source_column: The values to be verified, in the format of tablename.columnname
     target_column: The name of the column which values will be verified against.
-    primary_session: This determines the connection used. (See connections.py.)
-    session2: This is used as the connection for 'target_column' if provided.
+    session: This determines the connection used. (See connections.py.)
+    target_column2: If supplied, also checks a second column for values which might not
+        be contained in the first.
 
     OUTPUT:
     An integer with a count of the number of distinct missing records.
     """
 
-    missing_records = 0
     data = session.query(source_column).distinct().filter(source_column.isnot(None))
 
+    # If a second target column is provided, the values need to be in either of them.
+
+    if target_column2 is None:
+        logic = source_column==target_column
+    else:
+        logic = and_(source_column==target_column,source_column==target_column2)
+
+    missing_records = 0
+    
     # The '~' operator negates the exists() call.
 
-    for record in data.filter(~exists().where(source_column==target_column)):
+    for record in data.filter(~exists().where(logic)):
         missing_records += 1
 
     return missing_records
