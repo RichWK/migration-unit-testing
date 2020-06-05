@@ -20,3 +20,10 @@ def test_course_lookup():
         ,scribe_dev1
     ) == 0
 
+def test_courseContact_lookup():
+    assert missing_from_target(
+        ClassContact.courseContactID
+        ,CourseContact.name
+        ,scribe_dev1
+    ) == 0
+
