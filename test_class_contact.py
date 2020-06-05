@@ -8,14 +8,14 @@ scribe_dev1 = SCRIBE_DEV1.session
 
 def test_class_lookup():
     assert missing_from_target(
-        ClassPriceRule.classID
+        ClassContact.classID
         ,Class.mmsiClassCode
         ,scribe_dev1
     ) == 0
 
 def test_course_lookup():
     assert missing_from_target(
-        ClassPriceRule.courseID
+        ClassContact.courseID
         ,Course.name
         ,scribe_dev1
     ) == 0
