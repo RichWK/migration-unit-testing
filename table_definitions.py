@@ -9,7 +9,9 @@ base = declarative_base()
 class Class(base):
     __tablename__ = 'CLASS'
 
+    courseID = Column(String)
     mmsiClassCode = Column(String, primary_key=True)
+    venueID = Column(String)
 
 class ClassAttendance(base):
     __tablename__ = 'CLASS_ATTENDANCE'
@@ -221,4 +223,9 @@ class RegistrationComponent(base):
     sequence = Column(Integer)
     statusReason = Column(Integer)
     displayName = Column(String)
+
+class Venue(base):
+    __tablename__ = 'VENUE'
+
+    name = Column(String, primary_key=True)
 
