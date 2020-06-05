@@ -112,6 +112,12 @@ class CourseAccreditation(base):
 
     name = Column(String, primary_key=True)
 
+class CourseContact(base):
+    __tablename__ = 'COURSE_CONTACT'
+
+    courseID = Column(String)
+    name = Column(String, primary_key=True)
+
 class EducationHistory(base):
     __tablename__ = 'EDUCATION_HISTORY'
 
