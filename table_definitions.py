@@ -112,6 +112,7 @@ class ContactCourseDetail(base):
     startDate = Column(DateTime)
     statusReason = Column(Integer)
     displayName = Column(String)
+    externalCourseName = Column(String)
 
 class Course(base):
     __tablename__ = 'COURSE'
