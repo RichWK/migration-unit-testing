@@ -46,9 +46,13 @@ class ClassContact(base):
     __tablename__ = 'CLASS_CONTACT'
 
     classID = Column(String)
+    contactID = Column(String)
+    courseContactID = Column(String)
     courseID = Column(String)
     courseContactID = Column(String)
     name = Column(String, primary_key=True)
+    roleForThisClass = Column(String)
+    displayName = Column(String)
 
 class ClassPriceRule(base):
     __tablename__ = 'CLASS_PRICE_RULE'
