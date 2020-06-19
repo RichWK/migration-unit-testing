@@ -89,9 +89,6 @@ def test_startDate():
 def test_venueID():
     assert is_not_null(data, Class.venueID) == True
 
-def test_classID():
-    assert is_not_null(data, Class.classID) == True
-
 def test_viewOnWeb():
     assert is_not_null(data, Class.viewOnWeb) == True
 
