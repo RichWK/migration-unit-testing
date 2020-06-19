@@ -12,6 +12,7 @@ class Class(base):
     allowRegistrationWithoutOrder = Column(Integer)
     classInstanceNumber = Column(Integer)
     courseID = Column(String)
+    dateOpenForRegistration = Column(DateTime)
     deliveryMethod = Column(Integer)
     education = Column(Integer)
     endDate = Column(DateTime)
