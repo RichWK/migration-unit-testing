@@ -119,8 +119,15 @@ class Compliance(base):
 class ComplianceDetail(base):
     __tablename__ = 'COMPLIANCE_DETAIL'
 
+    appliedUnits = Column(Integer)
+    completed = Column(Integer)
     complianceID = Column(String)
     name = Column(String, primary_key=True)
+    pending = Column(Integer)
+    programAccreditationID = Column(String)
+    unitType = Column(Integer)
+    statusCode = Column(Integer)
+    displayName = Column(String)
 
 class ContactCourseDetail(base):
     __tablename__ = 'CONTACT_COURSE_DETAIL'
