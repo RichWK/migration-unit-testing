@@ -19,6 +19,3 @@ def test_primaryAccreditation_lookup():
 def test_name():
     assert is_not_null(data, Course.name) == True
 
-def test_primaryAccreditation():
-    assert is_not_null(data, Course.primaryAccreditation) == True
-
