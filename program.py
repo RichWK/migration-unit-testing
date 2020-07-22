@@ -14,7 +14,7 @@ def is_not_null(data, column):
     Boolean value.
     """
 
-    if data.filter(column is None).first() is None:
+    if data.filter(column == None).first() == None:
         return True
     else:
         return False
