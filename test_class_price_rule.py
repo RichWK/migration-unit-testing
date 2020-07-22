@@ -27,9 +27,6 @@ def test_course_lookup():
 
 # These tests verify there are no null values for these columns.
 
-def test_classID():
-    assert is_not_null(data, ClassPriceRule.classID) == True
-
 def test_courseID():
     assert is_not_null(data, ClassPriceRule.courseID) == True
 
