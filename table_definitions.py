@@ -157,6 +157,7 @@ class Course(base):
     __tablename__ = 'COURSE'
 
     name = Column(String, primary_key=True)
+    primaryAccreditation = Column(String)
 
 class CourseAccreditation(base):
     __tablename__ = 'COURSE_ACCREDITATION'
