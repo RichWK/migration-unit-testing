@@ -47,9 +47,6 @@ def test_order_lookup():
 
 # Everything below checks for nulls:
 
-def test_emailAddress():
-    assert is_not_null(data, Registration.emailAddress) == True
-
 def test_alternatePhoneNumber():
     assert is_not_null(data, Registration.alternatePhoneNumber) == True
 
