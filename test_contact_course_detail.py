@@ -34,9 +34,6 @@ def test_registration_lookup():
 
 # Everything below checks for nulls:
 
-def test_attendanceResult():
-    assert is_not_null(data, ContactCourseDetail.attendanceResult) == True
-
 def test_contactID():
     assert is_not_null(data, ContactCourseDetail.contactID) == True
 
